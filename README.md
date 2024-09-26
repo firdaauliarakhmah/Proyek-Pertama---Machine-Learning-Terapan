@@ -132,12 +132,14 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
 1. Random Forest, dalam mengimplementasikan algoritma ini, saya menggunakan method *RandomForestClassifier* dari sklearn.ensemble dengan argumen n_estimators=30 dan max_features=3. dan dihasilkan akurasi test score sebesar 0,97 dan confusion matrix score sebesar 0,98.
 
    Cara kerja random forest :
-   - Persiapan data (Scaling) : Data input (`X_train_scaled`, `X_test_scaled`) distandarisasi atau dinormalisasi. Ini membantu memastikan bahwa semua fitur berada dalam skala yang sama, yang dapat meningkatkan kinerja model.
-   - Inisialisasi model : Sebuah instance dari `RandomForestClassifier` dibuat dengan parameter yang ditentukan, seperti jumlah pohon (`n_estimators`) dan jumlah fitur yang digunakan dalam setiap pemisahan (`max_features`).
-   - Saat model dilatih (`fit`), untuk setiap pohon keputusan yang akan dibangun, algoritma mengambil sampel acak dari data pelatihan dengan pengembalian (`bootstrap sampling`). Ini berarti bahwa beberapa contoh mungkin terpilih lebih dari sekali, sementara yang lain mungkin tidak terpilih sama sekali.
-   - Pemisahan Fitur: Hanya fitur acak (berdasarkan `max_feature`s) yang dipertimbangkan saat membangun pohon. Ini meningkatkan variasi antar pohon.
-   - Menggunakan metode `score` untuk menghitung akurasi model pada data pelatihan dan pengujian lalu Menghitung proporsi prediksi yang benar dibandingkan dengan total data dan Ini akan memberikan gambaran tentang seberapa baik model telah belajar dari data.
-   - Menggunakan `predict_proba`, model dapat memberikan probabilitas untuk setiap kelas untuk setiap contoh. Ini membantu dalam memahami kepercayaan model terhadap prediksinya.
+   - Data input distandarisasi untuk memastikan semua fitur berada dalam skala yang sama.
+   - Buat instance dari `RandomForestClassifier` dengan parameter seperti jumlah pohon (`n_estimators`) dan jumlah fitur maksimal (`max_features`).
+   - Untuk setiap pohon keputusan, ambil sampel acak dari data pelatihan dengan pengembalian (`bootstrap sampling`).
+   - Bangun pohon keputusan untuk setiap subset dengan hanya mempertimbangkan fitur acak. Gunakan kriteria seperti Gini impurity atau entropy untuk pemisahan.
+   - Setelah semua pohon dibangun, setiap pohon memberikan prediksi.
+   - Gunakan voting untuk menentukan kelas akhir berdasarkan kelas yang paling umum di antara semua pohon.
+   - Gunakan metode `score` untuk menghitung akurasi model pada data pelatihan dan pengujian.
+   - Model juga dapat memberikan informasi tentang fitur mana yang paling berkontribusi terhadap prediksi.
   
    Kelebihan :
    - Memiliki akurasi yang baik pada banyak dataset.
@@ -151,10 +153,23 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
 3. K-Nearest Neighbor (KNN), dalam mengimplementasikan algoritma ini, saya menggunakan method *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. dan dihasilkan akurasi test score sebesar 0,94 dan confusion matrix score sebesar 0,97.
 
    Cara Kerja KNN :
+   - Data input (`X_train_scaled`, `X_test_scaled`) sudah distandarisasi atau dinormalisasi, sehingga fitur-fitur berada dalam skala yang sama. Ini penting untuk algoritma KNN, karena jarak antara titik-titik data akan menjadi faktor utama dalam prediksi.
+   - Buat instance dari `KNeighborsClassifier`
+   - Model menyimpan data pelatihan (`X_train_scaled` dan `y_train`) tanpa membangun model eksplisit
+   - Hitung jarak ke semua titik di data pelatihan
+   - Temukan k tetangga terdekat
+   - Tentukan kelas berdasarkan voting dari kelas tetangga
+   - Gunakan metode `score` untuk menghitung akurasi pada data pelatihan dan pengujian
+   - Dapatkan probabilitas untuk setiap kelas dengan predict_proba
 
    Kelebihan :
+   - Sederhana dan Mudah Dipahami, KNN mudah diimplementasikan dan dipahami, terutama untuk pemula.
+   - Tidak Memerlukan Pelatihan Eksternal, KNN tidak membangun model di fase pelatihan, hanya menyimpan data, sehingga cocok untuk dataset yang lebih kecil.
 
    Kekurangan :
+   - Waktu Prediksi, KNN dapat menjadi lambat saat memprediksi jika dataset pelatihan sangat besar karena harus menghitung jarak ke semua titik data.
+   - Tanpa normalisasi, KNN dapat memberikan hasil yang buruk karena jarak yang tidak seimbang antara fitur.
+   - Terlalu Bergantung pada Parameter k, Pemilihan nilai k yang salah dapat mempengaruhi performa model secara signifikan.
    
 
 ## Evaluation
