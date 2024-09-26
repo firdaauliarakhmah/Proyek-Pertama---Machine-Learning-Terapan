@@ -40,7 +40,7 @@ Dataset yang digunakan dalam proyek ini adalah data hasil prediksi stroke. Data 
 3. `age` : Usia subjek dalam dataset.
 4. `hypertension` : Menunjukkan apakah subjek memiliki riwayat hipertensi. Nilai 0 berarti tidak memiliki hipertensi, sedangkan nilai 1 berarti subjek mengidap hipertensi.
 5. `heart_disease` : Menyatakan apakah subjek memiliki penyakit jantung. Nilai 0 berarti tidak memiliki penyakit jantung, sedangkan nilai 1 berarti subjek mengidap penyakit jantung.
-6. ` ever_married` : Menyatakan status pernikahan subjek, apakah sudah pernah menikah atau belum.
+6. `ever_married` : Menyatakan status pernikahan subjek, apakah sudah pernah menikah atau belum.
 7. `work_type` : Menggambarkan jenis pekerjaan yang dimiliki oleh subjek.
 8. `Residence_type` : Menunjukkan jenis tempat tinggal subjek, apakah tinggal di daerah perkotaan atau pedesaan.
 9. `avg_glucose_level` : Menyatakan kadar gula darah rata-rata subjek.
@@ -80,35 +80,45 @@ Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate
   
   <img width="341" alt="Distribusi Gender" src="https://github.com/user-attachments/assets/de156827-d607-4caf-b489-6b9ca2455779">
 
+  Berdasarkan visualisasi bar chart distribusi gender, terlihat bahwa jumlah individu dengan gender Female mencapai sekitar 3000 orang, jauh lebih tinggi dibandingkan dengan Male yang berjumlah sekitar 2000 orang, sementara kategori Other sangat sedikit hingga hampir tidak terlihat. Ketidakseimbangan signifikan ini dapat mempengaruhi analisis dan model machine learning, yang mungkin cenderung bias terhadap prediksi gender dominan.
+
 - Distribusi jumlah subjek berdasarkan status pernikahan
   
   <img width="331" alt="Distribusi Status Pernikahan" src="https://github.com/user-attachments/assets/831ea298-9d4e-4059-b004-76a3086e058d">
 
+  Berdasarkan visualisasi bar chart distribusi status pernikahan, sangat terlihat bahwa distribusi orang yang memiliki status pernikahan (yes) lebih banyak yaitu sebesar kurang lebih 3400 di banding dengan yang belum memiliki status pernikahan (no) sebesar kurang lebih 1700. 
+
 - Distribusi jumlah subjek berdasarkan jenis pekerjaan
   
   <img width="335" alt="Distribusi Jenis Pekerjaan" src="https://github.com/user-attachments/assets/1dc5f634-7ae9-4d6d-9d5c-6dd634c554d3">
-
+  
+  Dari grafik visualisasi di atas, terlihat bahwa mayoritas individu bekerja di sektor swasta ("Private") dengan jumlah yang signifikan lebih tinggi dibandingkan jenis pekerjaan lainnya, mencapai hampir 3000 orang. Pekerjaan wiraswasta ("Self-employed"), anak-anak ("children"), dan pegawai pemerintah ("Govt_job") memiliki jumlah yang hampir seimbang, masing-masing sekitar 500 hingga 600 orang. Sementara itu, jumlah individu yang tidak pernah bekerja ("Never_worked") sangat kecil, hampir tidak terlihat dalam grafik. Hal ini menunjukkan bahwa pekerjaan di sektor swasta mendominasi distribusi pekerjaan.
 
 - Distribusi subjek berdasarkan tempat tinggal, apakah mereka tinggal di area urban atau rural ?
   
   <img width="332" alt="Distribusi Jenis Tempat Tingal" src="https://github.com/user-attachments/assets/99b65b85-54a9-45be-bd47-c306d56d7a11">
-
+  
+  Berdasarkan grafik di atas, distribusi penduduk antara wilayah perkotaan ("Urban") dan pedesaan ("Rural") tampak hampir seimbang. Jumlah penduduk di wilayah urban sedikit lebih tinggi, yaitu lebih dari 2500 orang, dibandingkan dengan penduduk di wilayah rural yang berada di angka yang hampir sama. Grafik ini menunjukkan bahwa tidak ada perbedaan yang signifikan antara jumlah penduduk yang tinggal di kedua jenis tempat tinggal ini.
 
 - Distribusi dari fitur numerik dalam dataset
   
   <img width="458" alt="Distribusi Fitur Numerik" src="https://github.com/user-attachments/assets/e5dbcda9-b921-42e7-8029-4488502bcc9c">
 
+  Histogram menunjukkan distribusi beberapa fitur numerik dalam dataset. Sebagian besar individu tidak memiliki hipertensi atau penyakit jantung, seperti yang ditunjukkan oleh kemiringan yang signifikan terhadap 0 pada plot tersebut. Distribusi usia cukup seimbang, dengan frekuensi yang lebih tinggi pada kelompok usia yang lebih tua, terutama antara 50 hingga 80 tahun. Kadar glukosa rata-rata memiliki kemiringan ke kanan, dengan sebagian besar individu memiliki kadar antara 70 dan 120, sementara beberapa menunjukkan kadar yang lebih tinggi. Distribusi BMI menunjukkan konsentrasi antara 20 dan 40, yang mengindikasikan sebagian besar individu memiliki nilai BMI sedang. Terakhir, distribusi stroke sangat miring, menunjukkan bahwa sebagian besar individu belum pernah mengalami stroke.
 
+Translated with DeepL.com (free version)
+  
 - Visualisasi data hipertensi yang berkaitan dengan stroke
   
   <img width="451" alt="Distribusi Hipertemsi Berdasarkan Status Stroke Pasien" src="https://github.com/user-attachments/assets/0ab76b72-ac9a-4017-aad6-8413dd45c85f">
 
-
+  Dari grafik visualisasi di atas menunjukkan distribusi hipertensi pada pasien berdasarkan status stroke. Sebagian besar pasien yang tidak memiliki hipertensi (hipertensi = 0) juga tidak mengalami stroke, dengan jumlah lebih dari 4000 orang. Sementara itu, pasien yang memiliki hipertensi (hipertensi = 1) memiliki proporsi yang lebih kecil, namun tetap terdapat kasus stroke pada kedua kelompok, baik yang memiliki hipertensi maupun yang tidak. Meskipun hipertensi berkaitan dengan stroke, grafik ini menunjukkan bahwa sebagian besar pasien tanpa hipertensi juga tidak mengalami stroke.
+  
 - Hubungan usia dengan risiko terjadinya stroke
   
   <img width="449" alt="Distribusi Usia Berdasarkan Stroke dan Hipertensi" src="https://github.com/user-attachments/assets/77a15449-88ff-4bc2-a922-ae372ce89f23">
 
-
+  Visualisasi data di atas membandingkan distribusi usia berdasarkan kejadian stroke (0 = Tidak, 1 = Ya) dan status hipertensi (biru = tanpa hipertensi, oranye = dengan hipertensi). Hal ini menunjukkan bahwa individu dengan hipertensi cenderung lebih tua pada kategori stroke dan non-stroke. Khususnya, usia rata-rata individu yang mengalami stroke lebih tinggi dibandingkan dengan mereka yang tidak mengalami stroke, terlepas dari status hipertensinya. Selain itu, ada beberapa pencilan pada kelompok usia yang lebih muda untuk orang yang mengalami stroke tetapi tidak memiliki hipertensi, menunjukkan bahwa meskipun usia merupakan faktor, individu yang lebih muda juga dapat mengalami stroke.
 
 ## Data Preparation
 Berikut adalah teknik yang dilakukan dalam proses data *preparation*:
@@ -120,9 +130,38 @@ Berikut adalah teknik yang dilakukan dalam proses data *preparation*:
 - **Membagi dataset, dan melakukan scaling dengan *MinMaxScaler***. Teknik ini dilakukan untuk membuat numerical data pada dataset memiliki rentang nilai (scale) yang sama. 
 
 ## Modeling
-Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun model machine learning. Dalam proyek ini, saya akan membuat dua model, yaitu Random Forest dan K-Nearest Neighbor (KNN).
+Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun model machine learning. Dalam proyek ini, saya akan membuat dua model, yaitu Random Forest dan K-Nearest Neighbor (KNN). 
+1. Random Forest, dalam mengimplementasikan algoritma ini, saya menggunakan method *RandomForestClassifier* dari sklearn.ensemble dengan argumen n_estimators=30 dan max_features=3. dan dihasilkan akurasi test score sebesar 0,97 dan confusion matrix score sebesar 0,98.
 
-1. **Random Forest** Untuk implementasi algoritma ini, menggunakan metode *Random Forest Classifier* dari sklearn.ensemble, dengan n_estimators=30 dan max_features=3. Model ini menghasilkan : 
+   Cara kerja random forest :
+   - Persiapan data (Scaling) : Data input (`X_train_scaled`, `X_test_scaled`) distandarisasi atau dinormalisasi. Ini membantu memastikan bahwa semua fitur berada dalam skala yang sama, yang dapat meningkatkan kinerja model.
+   - Inisialisasi model : Sebuah instance dari `RandomForestClassifier` dibuat dengan parameter yang ditentukan, seperti jumlah pohon (`n_estimators`) dan jumlah fitur yang digunakan dalam setiap pemisahan (`max_features`).
+   - Saat model dilatih (`fit`), untuk setiap pohon keputusan yang akan dibangun, algoritma mengambil sampel acak dari data pelatihan dengan pengembalian (`bootstrap sampling`). Ini berarti bahwa beberapa contoh mungkin terpilih lebih dari sekali, sementara yang lain mungkin tidak terpilih sama sekali.
+   - Pemisahan Fitur: Hanya fitur acak (berdasarkan `max_feature`s) yang dipertimbangkan saat membangun pohon. Ini meningkatkan variasi antar pohon.
+   - Menggunakan metode `score` untuk menghitung akurasi model pada data pelatihan dan pengujian lalu Menghitung proporsi prediksi yang benar dibandingkan dengan total data dan Ini akan memberikan gambaran tentang seberapa baik model telah belajar dari data.
+   - Menggunakan `predict_proba`, model dapat memberikan probabilitas untuk setiap kelas untuk setiap contoh. Ini membantu dalam memahami kepercayaan model terhadap prediksinya.
+  
+   Kelebihan :
+   - Memiliki akurasi yang baik pada banyak dataset.
+   - Kombinasi dari banyak pohon membantu mengurangi risiko overfitting.
+   - Dapat menentukan fitur mana yang paling berkontribusi terhadap prediksi.
+     
+   Kekurangan :
+   - Sulit untuk diinterpretasikan, tidak seperti pohon keputusan tunggal.
+   - Membangun banyak pohon dapat memakan waktu dan sumber daya komputasi.
+   
+3. K-Nearest Neighbor (KNN), dalam mengimplementasikan algoritma ini, saya menggunakan method *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. dan dihasilkan akurasi test score sebesar 0,94 dan confusion matrix score sebesar 0,97.
+
+   Cara Kerja KNN :
+
+   Kelebihan :
+
+   Kekurangan :
+   
+
+## Evaluation
+Dari 2 cara pemodelan yang diguanakan yaitu random forest dan knn, evaluasi yang dapat di ambil dari kedua model tersebut adalah : 
+1. **Random Forest**  Model ini bagus dan menghasilkan : 
     - `Akurasi` : 99%
     - `Precision 0` : 100%
     - `Recall 0` : 98%
@@ -135,10 +174,7 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
    <img width="360" alt="Random Forest" src="https://github.com/user-attachments/assets/bc4d00a8-7c5a-4ac6-9b61-0f5b6f87d99e">
 
 
-Kelebihan dari Random Forest adalah kemampuannya untuk memperkirakan variabel-variabel penting dalam klasifikasi melalui fitur importance. Namun, kekurangannya adalah memiliki kompleksitas yang tinggi, baik dari segi komputasi maupun interpretasi. Proses pelatihan bisa menjadi lambat, terutama pada dataset yang sangat besar, dan hasil modelnya cenderung sulit diinterpretasikan karena melibatkan banyak pohon keputusan yang digabungkan secara ensemble.
-
-
-2. **K-Nearest Neighbor (KNN)** Untuk mengimplementasikan algoritma ini menggunakan metode *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. Model ini menghasilkan : 
+2. **K-Nearest Neighbor (KNN)**  Model ini bagus dan menghasilkan : 
     - `Akurasi` : 98%
     - `Precision 0` : 100%
     - `Recall 0` : 95%
@@ -150,26 +186,30 @@ Kelebihan dari Random Forest adalah kemampuannya untuk memperkirakan variabel-va
 
    <img width="359" alt="KNN" src="https://github.com/user-attachments/assets/ef184169-f6d0-4cb1-8979-71d8dea73a1e">
    
-   Kelebihan dari K-Nearest Neighbor (KNN) adalah cukup efektif terhadap data yang besar. Selain itu, KNN mudah dipahami dan diimplementasikan, serta mampu menangani data non-linear dengan baik. Namun, kekurangannya adalah perlu menentukan terlebih dahulu nilai parameter K, yang sangat memengaruhi kinerja model. Selain itu, KNN cenderung lambat ketika bekerja dengan dataset yang sangat besar, karena membutuhkan komputasi jarak untuk setiap data poin dalam dataset. KNN juga sensitif terhadap fitur yang memiliki skala berbeda, sehingga memerlukan normalisasi atau standarisasi data sebelum digunakan.
 
-## Evaluation
-Secara keseluruhan penyelesaian proyek ini sangat berhasil, kedua model yang digunakan dapat menunjukkan kinerjanya dengan sangat baik. Goals dapat di capai melalui visualisasi data yang di gambarkan dan mampu menyelesaikan permasalahan yang ada. Perbandingan akurasi dari kedua model pun sangat mudah untuk dimengerti, seperti visualisasi data berikut : 
+<br>
+
+
+**Perbandingan akurasi dari kedua model Machine Learning :**
 
 <img width="393" alt="Perbandingan Akurasi" src="https://github.com/user-attachments/assets/da79e748-0aeb-41c3-995c-f0dfc6c79418">
 
-Berdasarkan visualisasi data di atas, untuk pemilihan model dengan kinerja terbaik jatuh pada model dengan Forest Classifier, karena model ini sedikit lebih unggul dalam hal akurasi dan keseimbangan antara precision dan recall di kedua kelas dibandingkan K-Neighbors Classifier. Meskipun kedua model cukup baik dalam mengklasifikasikan data, Forest Classifier memiliki performa yang lebih konsisten dan sedikit lebih baik secara keseluruhan. 
+1. **Model dengan akurasi terbaik :** Berdasarkan evaluasi performa diatas, Forest Classifier terbukti memiliki akurasi terbaik sebesar 99%. Model ini unggul dalam hal akurasi dan keseimbangan antara precision dan recall, terutama dalam membedakan antara pasien yang berisiko terkena stroke dan yang tidak, dibandingkan dengan K-Neighbors Classifier.
+2. **Pembuatan Model untuk Memprediksi Stroke:** Dalam proyek ini, langkah-langkah pembuatan model melibatkan pemrosesan data medis pasien, termasuk faktor-faktor seperti usia, hipertensi, dan kondisi kesehatan lainnya. Dataset digunakan untuk melatih beberapa algoritma machine learning, di antaranya K-Neighbors Classifier dan Forest Classifier. Model Forest Classifier akhirnya dipilih sebagai model terbaik karena memiliki kemampuan generalisasi yang lebih baik dan performa yang konsisten dalam memprediksi risiko stroke.
+3. **Peran Hipertensi dalam Mendiagnosis Risiko Stroke:** Hipertensi merupakan faktor risiko utama untuk stroke karena tekanan darah tinggi dapat merusak pembuluh darah di otak. Dalam analisis ini, model machine learning mampu menggunakan data hipertensi untuk membantu memperkirakan kemungkinan pasien terkena stroke. Faktor hipertensi berperan penting karena berkontribusi dalam meningkatkan akurasi prediksi risiko stroke, dengan pasien yang memiliki hipertensi memiliki risiko lebih tinggi dibandingkan yang tidak.
 
+Secara keseluruhan, proyek ini berhasil memecahkan masalah dengan menemukan model prediksi yang andal untuk risiko stroke, serta mengidentifikasi hipertensi sebagai faktor kunci dalam diagnosis.
 
 ## Referensi
-[[1](https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke)] P2PTM Kemenkes RI. -*Apa itu Stroke ?*. Kemenkes. https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke
+[1]. (https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke) P2PTM Kemenkes RI. -*Apa itu Stroke ?*. Kemenkes. https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke
 
-[[2](https://ayosehat.kemkes.go.id/kenali-stroke-dan-penyebabnya)] Direktorat Promosi Kesehatan dan Pemberdayaan Masyarakat. -*Kenali Stroke dan Penyebabnya*. Ayo Sehat. https://ayosehat.kemkes.go.id/kenali-stroke-dan-penyebabnya
+[2]. (https://ayosehat.kemkes.go.id/kenali-stroke-dan-penyebabnya) Direktorat Promosi Kesehatan dan Pemberdayaan Masyarakat. -*Kenali Stroke dan Penyebabnya*. Ayo Sehat. https://ayosehat.kemkes.go.id/kenali-stroke-dan-penyebabnya
 
-[[3](https://nasional.kompas.com/read/2024/04/24/11450061/singgung-persoalan-kesehatan-jokowi-kematian-akibat-stroke-capai-330000)] Dian Erika Nugraheny, Ihsanuddin. -*Singgung Persoalan Kesehatan, Jokowi: Kematian akibat Stroke Capai 330.000*. Kompas. https://nasional.kompas.com/read/2024/04/24/11450061/singgung-persoalan-kesehatan-jokowi-kematian-akibat-stroke-capai-330000
+[3]. (https://nasional.kompas.com/read/2024/04/24/11450061/singgung-persoalan-kesehatan-jokowi-kematian-akibat-stroke-capai-330000) Dian Erika Nugraheny, Ihsanuddin. -*Singgung Persoalan Kesehatan, Jokowi: Kematian akibat Stroke Capai 330.000*. Kompas. https://nasional.kompas.com/read/2024/04/24/11450061/singgung-persoalan-kesehatan-jokowi-kematian-akibat-stroke-capai-330000
 
-[[4](https://www.halodoc.com/artikel/apa-saja-penyebab-stroke-ini-jawabannya?srsltid=AfmBOopLcmWbwnXA32MOvI5OQjgDdjuYil6inEbWKESmFQlkDuyveEpE
-)] dr. Verury Verona Handayani. -*Apa Saja Penyebab Stroke? Ini Jawabannya*. Halodoc. https://www.halodoc.com/artikel/apa-saja-penyebab-stroke-ini-jawabannya?srsltid=AfmBOopLcmWbwnXA32MOvI5OQjgDdjuYil6inEbWKESmFQlkDuyveEpE
+[4]. (https://www.halodoc.com/artikel/apa-saja-penyebab-stroke-ini-jawabannya?srsltid=AfmBOopLcmWbwnXA32MOvI5OQjgDdjuYil6inEbWKESmFQlkDuyveEpE
+) dr. Verury Verona Handayani. -*Apa Saja Penyebab Stroke? Ini Jawabannya*. Halodoc. https://www.halodoc.com/artikel/apa-saja-penyebab-stroke-ini-jawabannya?srsltid=AfmBOopLcmWbwnXA32MOvI5OQjgDdjuYil6inEbWKESmFQlkDuyveEpE
 
-[[5](https://deepai.org/machine-learning-glossary-and-terms/random-forest)] Wood, T. -*What is a Random Forest?*. DeepAI. https://deepai.org/machine-learning-glossary-and-terms/random-forest
+[5]. (https://deepai.org/machine-learning-glossary-and-terms/random-forest) Wood, T. -*What is a Random Forest?*. DeepAI. https://deepai.org/machine-learning-glossary-and-terms/random-forest
 
-[[6](https://towardsdatascience.com/a-simple-introduction-to-k-nearest-neighbors-algorithm-b3519ed98e?gi=13449fe30a85)] Subramanian, D. (2019). *A Simple Introduction to K-Nearest Neighbors Algorithm*. Towards Data Science. https://towardsdatascience.com/a-simple-introduction-to-k-nearest-neighbors-algorithm-b3519ed98e?gi=13449fe30a85
+[6]. (https://towardsdatascience.com/a-simple-introduction-to-k-nearest-neighbors-algorithm-b3519ed98e?gi=13449fe30a85) Subramanian, D. (2019). *A Simple Introduction to K-Nearest Neighbors Algorithm*. Towards Data Science. https://towardsdatascience.com/a-simple-introduction-to-k-nearest-neighbors-algorithm-b3519ed98e?gi=13449fe30a85
