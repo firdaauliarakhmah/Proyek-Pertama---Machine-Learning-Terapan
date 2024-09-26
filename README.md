@@ -75,7 +75,7 @@ Tahapan dalam penyelesaian proyek ini sebelum data diolah pada pre-processing ad
 
 <br>
 
-Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate Analysis* sebagai bagian dari tahap visualisasi untuk memahami data sebelum melakukan *pre-processing*. Berikut ini tahapan visualisasi yang saya lakukan : 
+Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate Analysis* sebagai bagian dari tahap visualisasi untuk memahami data sebelum melakukan *pre-processing*. Berikut ini tahapan visualisasi yang saya lakukan: 
 - Distribusi jumlah subjek berdasarkan jenis kelamin
   
   <img width="341" alt="Distribusi Gender" src="https://github.com/user-attachments/assets/de156827-d607-4caf-b489-6b9ca2455779">
@@ -154,13 +154,13 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
 
    Cara Kerja KNN :
    - Data input (`X_train_scaled`, `X_test_scaled`) sudah distandarisasi atau dinormalisasi, sehingga fitur-fitur berada dalam skala yang sama. Ini penting untuk algoritma KNN, karena jarak antara titik-titik data akan menjadi faktor utama dalam prediksi.
-   - Buat instance dari `KNeighborsClassifier`
-   - Model menyimpan data pelatihan (`X_train_scaled` dan `y_train`) tanpa membangun model eksplisit
-   - Hitung jarak ke semua titik di data pelatihan
-   - Temukan k tetangga terdekat
-   - Tentukan kelas berdasarkan voting dari kelas tetangga
-   - Gunakan metode `score` untuk menghitung akurasi pada data pelatihan dan pengujian
-   - Dapatkan probabilitas untuk setiap kelas dengan predict_proba
+   - Buat instance dari `KNeighborsClassifier`.
+   - Model menyimpan data pelatihan (`X_train_scaled` dan `y_train`) tanpa membangun model eksplisit.
+   - Hitung jarak ke semua titik di data pelatihan.
+   - Temukan k tetangga terdekat.
+   - Tentukan kelas berdasarkan voting dari kelas tetangga.
+   - Gunakan metode `score` untuk menghitung akurasi pada data pelatihan dan pengujian.
+   - Dapatkan probabilitas untuk setiap kelas dengan predict_proba.
 
    Kelebihan :
    - Sederhana dan Mudah Dipahami, KNN mudah diimplementasikan dan dipahami, terutama untuk pemula.
