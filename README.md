@@ -125,6 +125,7 @@ Berikut adalah teknik yang dilakukan dalam proses data *preparation*:
 - **Melakukan *upsample* agar data seimbang**. Dalam dataset ini, ditemukan bahwa data belum seimbang, maka dilakukan upsample agar data menjadi seimbang dan menghasilkan prediksi yang bagus.
 - **Mendeteksi *outliers***. Dalam proyek ini saya menggunakan InterQuartile Range untuk mendeteksi outliers.
 - **Melakukan *one hot encoding***. Ini dilakukan pada data kategorikal agar datanya berubah menjadi data numerikal.
+- melakukan *Feature importance*. teknik ini dilakukan untuk melihat fitur apa saja yang memiliki peranan penting untuk membuat model. Dari sini ditemukan bahwa fitur Age, Average Glucose Level, dan BMI memiliki peranan yang sangat penting untuk digunakan dalam membuat model.
 - **Membagi dataset, dan melakukan scaling dengan *MinMaxScaler***. Teknik ini dilakukan untuk membuat numerical data pada dataset memiliki rentang nilai (scale) yang sama. 
 
 ## Modeling
@@ -150,7 +151,7 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
    - Sulit untuk diinterpretasikan, tidak seperti pohon keputusan tunggal.
    - Membangun banyak pohon dapat memakan waktu dan sumber daya komputasi.
    
-3. K-Nearest Neighbor (KNN), dalam mengimplementasikan algoritma ini, saya menggunakan method *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. dan dihasilkan akurasi test score sebesar 0,94 dan confusion matrix score sebesar 0,97.
+2. K-Nearest Neighbor (KNN), dalam mengimplementasikan algoritma ini, saya menggunakan method *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. dan dihasilkan akurasi test score sebesar 0,94 dan confusion matrix score sebesar 0,97.
 
    Cara Kerja KNN :
    - Data input (`X_train_scaled`, `X_test_scaled`) sudah distandarisasi atau dinormalisasi, sehingga fitur-fitur berada dalam skala yang sama. Ini penting untuk algoritma KNN, karena jarak antara titik-titik data akan menjadi faktor utama dalam prediksi.
@@ -173,8 +174,8 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
    
 
 ## Evaluation
-Dari 2 cara pemodelan yang diguanakan yaitu random forest dan knn, evaluasi yang dapat di ambil dari kedua model tersebut adalah : 
-1. **Random Forest**  Model ini bagus dan menghasilkan : 
+Dari dua metode pemodelan yang digunakan, yaitu Random Forest dan K-Nearest Neighbor (KNN), berikut adalah evaluasi yang dapat diambil dari kedua model tersebut :
+1. **Random Forest**  Model ini menunjukkan performa yang sangat baik dengan hasil sebagai berikut :
     - `Akurasi` : 99%
     - `Precision 0` : 100%
     - `Recall 0` : 98%
@@ -187,7 +188,7 @@ Dari 2 cara pemodelan yang diguanakan yaitu random forest dan knn, evaluasi yang
    <img width="360" alt="Random Forest" src="https://github.com/user-attachments/assets/bc4d00a8-7c5a-4ac6-9b61-0f5b6f87d99e">
 
 
-2. **K-Nearest Neighbor (KNN)**  Model ini bagus dan menghasilkan : 
+2. **K-Nearest Neighbor (KNN)**  Model ini juga menunjukkan performa yang baik dengan hasil sebagai berikut :
     - `Akurasi` : 98%
     - `Precision 0` : 100%
     - `Recall 0` : 95%
