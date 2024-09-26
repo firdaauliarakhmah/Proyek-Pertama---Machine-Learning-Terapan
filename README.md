@@ -105,8 +105,6 @@ Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate
   <img width="458" alt="Distribusi Fitur Numerik" src="https://github.com/user-attachments/assets/e5dbcda9-b921-42e7-8029-4488502bcc9c">
 
   Histogram menunjukkan distribusi beberapa fitur numerik dalam dataset. Sebagian besar individu tidak memiliki hipertensi atau penyakit jantung, seperti yang ditunjukkan oleh kemiringan yang signifikan terhadap 0 pada plot tersebut. Distribusi usia cukup seimbang, dengan frekuensi yang lebih tinggi pada kelompok usia yang lebih tua, terutama antara 50 hingga 80 tahun. Kadar glukosa rata-rata memiliki kemiringan ke kanan, dengan sebagian besar individu memiliki kadar antara 70 dan 120, sementara beberapa menunjukkan kadar yang lebih tinggi. Distribusi BMI menunjukkan konsentrasi antara 20 dan 40, yang mengindikasikan sebagian besar individu memiliki nilai BMI sedang. Terakhir, distribusi stroke sangat miring, menunjukkan bahwa sebagian besar individu belum pernah mengalami stroke.
-
-Translated with DeepL.com (free version)
   
 - Visualisasi data hipertensi yang berkaitan dengan stroke
   
