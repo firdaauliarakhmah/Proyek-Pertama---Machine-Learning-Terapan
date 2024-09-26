@@ -77,28 +77,35 @@ Tahapan dalam penyelesaian proyek ini sebelum data diolah pada pre-processing ad
 
 Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate Analysis* sebagai bagian dari tahap visualisasi untuk memahami data sebelum melakukan *pre-processing*. Berikut ini tahapan visualisasi yang saya lakukan : 
 - Distribusi jumlah subjek berdasarkan jenis kelamin
+  
   <img width="341" alt="Distribusi Gender" src="https://github.com/user-attachments/assets/de156827-d607-4caf-b489-6b9ca2455779">
 
 - Distribusi jumlah subjek berdasarkan status pernikahan
+  
   <img width="331" alt="Distribusi Status Pernikahan" src="https://github.com/user-attachments/assets/831ea298-9d4e-4059-b004-76a3086e058d">
 
 - Distribusi jumlah subjek berdasarkan jenis pekerjaan
+  
   <img width="335" alt="Distribusi Jenis Pekerjaan" src="https://github.com/user-attachments/assets/1dc5f634-7ae9-4d6d-9d5c-6dd634c554d3">
 
 
 - Distribusi subjek berdasarkan tempat tinggal, apakah mereka tinggal di area urban atau rural ?
+  
   <img width="332" alt="Distribusi Jenis Tempat Tingal" src="https://github.com/user-attachments/assets/99b65b85-54a9-45be-bd47-c306d56d7a11">
 
 
 - Distribusi dari fitur numerik dalam dataset
+  
   <img width="458" alt="Distribusi Fitur Numerik" src="https://github.com/user-attachments/assets/e5dbcda9-b921-42e7-8029-4488502bcc9c">
 
 
 - Visualisasi data hipertensi yang berkaitan dengan stroke
+  
   <img width="451" alt="Distribusi Hipertemsi Berdasarkan Status Stroke Pasien" src="https://github.com/user-attachments/assets/0ab76b72-ac9a-4017-aad6-8413dd45c85f">
 
 
 - Hubungan usia dengan risiko terjadinya stroke
+  
   <img width="449" alt="Distribusi Usia Berdasarkan Stroke dan Hipertensi" src="https://github.com/user-attachments/assets/77a15449-88ff-4bc2-a922-ae372ce89f23">
 
 
