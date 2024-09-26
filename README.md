@@ -75,7 +75,7 @@ Tahapan dalam penyelesaian proyek ini sebelum data diolah pada pre-processing ad
 
 <br>
 
-Saya menggunakan tahapan Visualisasi Univariate Analysis sebagai bagian dari tahap visualisasi data untuk memahami data sebelum melakukan pre-processing. Berikut ini tahapan visualisasi yang saya lakukan : 
+Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate Analysis* sebagai bagian dari tahap visualisasi untuk memahami data sebelum melakukan *pre-processing*. Berikut ini tahapan visualisasi yang saya lakukan : 
 - Distribusi jumlah subjek berdasarkan jenis kelamin
   ![Uploading Distribusi Gender.png…]()
 
@@ -117,8 +117,10 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
     - `Precision 1` : 98%
     - `Recall 1` : 100%
     - `F1-Score` : 0.99
-      
-Kelebihan dari random forest adalah ...
+
+   ![Uploading Random Forest.png…]()
+
+Kelebihan dari Random Forest adalah kemampuannya untuk memperkirakan variabel-variabel penting dalam klasifikasi melalui fitur importance. Namun, kekurangannya adalah memiliki kompleksitas yang tinggi, baik dari segi komputasi maupun interpretasi. Proses pelatihan bisa menjadi lambat, terutama pada dataset yang sangat besar, dan hasil modelnya cenderung sulit diinterpretasikan karena melibatkan banyak pohon keputusan yang digabungkan secara ensemble.
 
 
 2. **K-Nearest Neighbor (KNN)** Untuk mengimplementasikan algoritma ini menggunakan metode *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. Model ini menghasilkan : 
@@ -129,11 +131,15 @@ Kelebihan dari random forest adalah ...
     - `Recall 1` : 100%
     - `F1-Score` : 0.98
 
-Kelebihan dari K-Nearest Neighbor (KNN) adalah ...
+   ![Uploading KNN.png…]()
+
+
+Kelebihan dari K-Nearest Neighbor (KNN) adalah cukup efektif terhadap data yang besar. Selain itu, KNN mudah dipahami dan diimplementasikan, serta mampu menangani data non-linear dengan baik. Namun, kekurangannya adalah perlu menentukan terlebih dahulu nilai parameter K, yang sangat memengaruhi kinerja model. Selain itu, KNN cenderung lambat ketika bekerja dengan dataset yang sangat besar, karena membutuhkan komputasi jarak untuk setiap data poin dalam dataset. KNN juga sensitif terhadap fitur yang memiliki skala berbeda, sehingga memerlukan normalisasi atau standarisasi data sebelum digunakan.
 
 ## Evaluation
 Secara keseluruhan penyelesaian proyek ini sangat berhasil, kedua model yang digunakan dapat menunjukkan kinerjanya dengan sangat baik. Goals dapat di capai melalui visualisasi data yang di gambarkan dan mampu menyelesaikan permasalahan yang ada. Perbandingan akurasi dari kedua model pun sangat mudah untuk dimengerti, seperti visualisasi data berikut : 
 
+![Uploading Perbandingan Akurasi.png…]()
 
 
 Berdasarkan visualisasi data di atas, untuk pemilihan model dengan kinerja terbaik jatuh pada model dengan Forest Classifier, karena model ini sedikit lebih unggul dalam hal akurasi dan keseimbangan antara precision dan recall di kedua kelas dibandingkan K-Neighbors Classifier. Meskipun kedua model cukup baik dalam mengklasifikasikan data, Forest Classifier memiliki performa yang lebih konsisten dan sedikit lebih baik secara keseluruhan. 
