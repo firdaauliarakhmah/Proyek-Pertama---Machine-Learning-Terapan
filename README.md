@@ -77,24 +77,30 @@ Tahapan dalam penyelesaian proyek ini sebelum data diolah pada pre-processing ad
 
 Dalam tahapan visualisasi data, Saya menggunakan tahapan *Visualisasi Univariate Analysis* sebagai bagian dari tahap visualisasi untuk memahami data sebelum melakukan *pre-processing*. Berikut ini tahapan visualisasi yang saya lakukan : 
 - Distribusi jumlah subjek berdasarkan jenis kelamin
-  #
+  <img width="341" alt="Distribusi Gender" src="https://github.com/user-attachments/assets/de156827-d607-4caf-b489-6b9ca2455779">
 
 - Distribusi jumlah subjek berdasarkan status pernikahan
-  #
+  <img width="331" alt="Distribusi Status Pernikahan" src="https://github.com/user-attachments/assets/831ea298-9d4e-4059-b004-76a3086e058d">
+
 - Distribusi jumlah subjek berdasarkan jenis pekerjaan
-  #
+  <img width="335" alt="Distribusi Jenis Pekerjaan" src="https://github.com/user-attachments/assets/1dc5f634-7ae9-4d6d-9d5c-6dd634c554d3">
+
 
 - Distribusi subjek berdasarkan tempat tinggal, apakah mereka tinggal di area urban atau rural ?
-  #
+  <img width="332" alt="Distribusi Jenis Tempat Tingal" src="https://github.com/user-attachments/assets/99b65b85-54a9-45be-bd47-c306d56d7a11">
+
 
 - Distribusi dari fitur numerik dalam dataset
-  #
+  <img width="458" alt="Distribusi Fitur Numerik" src="https://github.com/user-attachments/assets/e5dbcda9-b921-42e7-8029-4488502bcc9c">
+
 
 - Visualisasi data hipertensi yang berkaitan dengan stroke
-  #
+  <img width="451" alt="Distribusi Hipertemsi Berdasarkan Status Stroke Pasien" src="https://github.com/user-attachments/assets/0ab76b72-ac9a-4017-aad6-8413dd45c85f">
+
 
 - Hubungan usia dengan risiko terjadinya stroke
-  #
+  <img width="449" alt="Distribusi Usia Berdasarkan Stroke dan Hipertensi" src="https://github.com/user-attachments/assets/77a15449-88ff-4bc2-a922-ae372ce89f23">
+
 
 
 ## Data Preparation
@@ -117,7 +123,10 @@ Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun mode
     - `Recall 1` : 100%
     - `F1-Score` : 0.99
 
-   #
+<br>
+
+   <img width="360" alt="Random Forest" src="https://github.com/user-attachments/assets/bc4d00a8-7c5a-4ac6-9b61-0f5b6f87d99e">
+
 
 Kelebihan dari Random Forest adalah kemampuannya untuk memperkirakan variabel-variabel penting dalam klasifikasi melalui fitur importance. Namun, kekurangannya adalah memiliki kompleksitas yang tinggi, baik dari segi komputasi maupun interpretasi. Proses pelatihan bisa menjadi lambat, terutama pada dataset yang sangat besar, dan hasil modelnya cenderung sulit diinterpretasikan karena melibatkan banyak pohon keputusan yang digabungkan secara ensemble.
 
@@ -130,16 +139,16 @@ Kelebihan dari Random Forest adalah kemampuannya untuk memperkirakan variabel-va
     - `Recall 1` : 100%
     - `F1-Score` : 0.98
 
-   #
+<br>
 
-
-Kelebihan dari K-Nearest Neighbor (KNN) adalah cukup efektif terhadap data yang besar. Selain itu, KNN mudah dipahami dan diimplementasikan, serta mampu menangani data non-linear dengan baik. Namun, kekurangannya adalah perlu menentukan terlebih dahulu nilai parameter K, yang sangat memengaruhi kinerja model. Selain itu, KNN cenderung lambat ketika bekerja dengan dataset yang sangat besar, karena membutuhkan komputasi jarak untuk setiap data poin dalam dataset. KNN juga sensitif terhadap fitur yang memiliki skala berbeda, sehingga memerlukan normalisasi atau standarisasi data sebelum digunakan.
+   <img width="359" alt="KNN" src="https://github.com/user-attachments/assets/ef184169-f6d0-4cb1-8979-71d8dea73a1e">
+   
+   Kelebihan dari K-Nearest Neighbor (KNN) adalah cukup efektif terhadap data yang besar. Selain itu, KNN mudah dipahami dan diimplementasikan, serta mampu menangani data non-linear dengan baik. Namun, kekurangannya adalah perlu menentukan terlebih dahulu nilai parameter K, yang sangat memengaruhi kinerja model. Selain itu, KNN cenderung lambat ketika bekerja dengan dataset yang sangat besar, karena membutuhkan komputasi jarak untuk setiap data poin dalam dataset. KNN juga sensitif terhadap fitur yang memiliki skala berbeda, sehingga memerlukan normalisasi atau standarisasi data sebelum digunakan.
 
 ## Evaluation
 Secara keseluruhan penyelesaian proyek ini sangat berhasil, kedua model yang digunakan dapat menunjukkan kinerjanya dengan sangat baik. Goals dapat di capai melalui visualisasi data yang di gambarkan dan mampu menyelesaikan permasalahan yang ada. Perbandingan akurasi dari kedua model pun sangat mudah untuk dimengerti, seperti visualisasi data berikut : 
 
-#
-
+<img width="393" alt="Perbandingan Akurasi" src="https://github.com/user-attachments/assets/da79e748-0aeb-41c3-995c-f0dfc6c79418">
 
 Berdasarkan visualisasi data di atas, untuk pemilihan model dengan kinerja terbaik jatuh pada model dengan Forest Classifier, karena model ini sedikit lebih unggul dalam hal akurasi dan keseimbangan antara precision dan recall di kedua kelas dibandingkan K-Neighbors Classifier. Meskipun kedua model cukup baik dalam mengklasifikasikan data, Forest Classifier memiliki performa yang lebih konsisten dan sedikit lebih baik secara keseluruhan. 
 
