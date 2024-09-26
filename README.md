@@ -5,7 +5,8 @@
 Domain yang saya pilih untuk proyek pertama ini adalah Kesehatan, dengan judul proyek **Model Prediksi Berbasis Machine Learning untuk Diagnosis Risiko Terjadinya Stroke Berdasarkan Analisis Faktor Hipertensi dari Data Pasien**.
 
 - Latar Belakang 
-![Stroke Image](https://i.postimg.cc/t7QnT8G0/Stroke.jpg)
+![Stroke](https://github.com/user-attachments/assets/dc26336d-6749-4c00-96a5-bee716f37ca5)
+
 
 Stroke adalah penyakit pembuluh darah otak. Definisi menurut WHO, Stroke adalah suatu keadaan dimana ditemukan tanda-tanda klinis yang berkembang cepat berupa defisit neurologik fokal dan global, yang dapat memberat dan berlangsung lama selama 24 jam atau lebih dan atau dapat menyebabkan kematian, tanpa adanya penyebab lain yang jelas selain vascular. Stroke terjadi apabila pembuluh darah otak mengalami penyumbatan atau pecah. Akibatnya sebagian otak tidak mendapatkan  pasokan darah yang membawa oksigen yang diperlukan sehingga mengalami kematian sel/jaringan [[1](https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke)]. 
 
@@ -61,6 +62,42 @@ Visibility | Public
 Tags | Health, Health Conditions, Public Health, Healthcare, Binary Classification
 Usability | 10.0
 
+<br> 
+
+Tahapan dalam penyelesaian proyek ini sebelum data diolah pada pre-processing adalah : 
+- Meload dataset (read data .csv)
+- Melihat jumlah baris dan kolom pada data .csv
+- Melihat informasi pada dataset
+- Mengecek total missing value tiap kolom
+- Mengecek data yang terduplikat
+- Mengecek apakah data sudah balance ?
+
+
+<br>
+
+Saya menggunakan tahapan Visualisasi Univariate Analysis sebagai bagian dari tahap visualisasi data untuk memahami data sebelum melakukan pre-processing. Berikut ini tahapan visualisasi yang saya lakukan : 
+- Distribusi jumlah subjek berdasarkan jenis kelamin
+  ![Uploading Distribusi Gender.png…]()
+
+- Distribusi jumlah subjek berdasarkan status pernikahan
+  ![Uploading Distribusi Status Pernikahan.png…]()
+
+- Distribusi jumlah subjek berdasarkan jenis pekerjaan
+  ![Uploading Distribusi Jenis Pekerjaan.png…]()
+
+- Distribusi subjek berdasarkan tempat tinggal, apakah mereka tinggal di area urban atau rural ?
+  ![Uploading Distribusi Jenis Tempat Tingal.png…]()
+
+- Distribusi dari fitur numerik dalam dataset
+  ![Uploading Distribusi Fitur Numerik.png…]()
+
+- Visualisasi data hipertensi yang berkaitan dengan stroke
+  ![Uploading Distribusi Hipertemsi Berdasarkan Status Stroke Pasien.png…]()
+
+- Hubungan usia dengan risiko terjadinya stroke
+  ![Uploading Distribusi Usia Berdasarkan Stroke dan Hipertensi.png…]()
+
+
 ## Data Preparation
 Berikut adalah teknik yang dilakukan dalam proses data *preparation*:
 - **Menghapus kolom yang tidak diperlukan**. Kolom atau variabel yang dihapus adalah id, karena tidak memiliki kepentingan untuk dimasukkan ke dalam model.
@@ -73,32 +110,34 @@ Berikut adalah teknik yang dilakukan dalam proses data *preparation*:
 ## Modeling
 Setelah menyelesaikan data preparation, langkah berikutnya adalah membangun model machine learning. Dalam proyek ini, saya akan membuat dua model, yaitu Random Forest dan K-Nearest Neighbor (KNN).
 
-1. **Random Forest** Untuk implementasi algoritma ini, menggunakan metode RandomForestClassifier dari sklearn.ensemble, dengan n_estimators=30 dan max_features=3. Model ini menghasilkan : 
+1. **Random Forest** Untuk implementasi algoritma ini, menggunakan metode *Random Forest Classifier* dari sklearn.ensemble, dengan n_estimators=30 dan max_features=3. Model ini menghasilkan : 
     - `Akurasi` : 99%
     - `Precision 0` : 100%
-    - `Recall 0` : 97%
-    - `Precision 1` : 97%
+    - `Recall 0` : 98%
+    - `Precision 1` : 98%
     - `Recall 1` : 100%
     - `F1-Score` : 0.99
+      
+Kelebihan dari random forest adalah ...
 
-    ![Random_Forest](https://i.postimg.cc/9Q2cfCKX/1.png)
 
-
-
-2. **K-Nearest Neighbor (KNN)** Untuk mengimplementasikan algoritma ini menggunakan method *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. Model ini menghasilkan : 
-    - `Akurasi` : 97%
+2. **K-Nearest Neighbor (KNN)** Untuk mengimplementasikan algoritma ini menggunakan metode *KNeighborsClassifier* dari sklearn.neighbors dengan argumen n_neighbors=2. Model ini menghasilkan : 
+    - `Akurasi` : 98%
     - `Precision 0` : 100%
     - `Recall 0` : 95%
-    - `Precision 1` : 95%
+    - `Precision 1` : 96%
     - `Recall 1` : 100%
-    - `F1-Score` : 0.97
+    - `F1-Score` : 0.98
 
-    ![KNN](https://i.postimg.cc/tg0WJZyZ/2.png)
+Kelebihan dari K-Nearest Neighbor (KNN) adalah ...
 
 ## Evaluation
-Setelah membangun dua model *machine learning* menggunakan **Random Forest** dan **K-Nearest Neighbor (KNN)**, maka dapat di bandingkan untuk akurasi terbaiknya. Random Forest Classifier sedikit lebih unggul dalam hal akurasi dan keseimbangan antara precision dan recall di kedua kelas dibandingkan K-Neighbors Classifier. Meskipun kedua model cukup baik dalam mengklasifikasikan data, Random Forest Classifier memiliki performa yang lebih konsisten dan sedikit lebih baik secara keseluruhan. Seperti visualisasi berikut : 
+Secara keseluruhan penyelesaian proyek ini sangat berhasil, kedua model yang digunakan dapat menunjukkan kinerjanya dengan sangat baik. Goals dapat di capai melalui visualisasi data yang di gambarkan dan mampu menyelesaikan permasalahan yang ada. Perbandingan akurasi dari kedua model pun sangat mudah untuk dimengerti, seperti visualisasi data berikut : 
 
-![Perbandingan Akurasi](https://i.postimg.cc/hGPzf96G/3.png)
+
+
+Berdasarkan visualisasi data di atas, untuk pemilihan model dengan kinerja terbaik jatuh pada model dengan Forest Classifier, karena model ini sedikit lebih unggul dalam hal akurasi dan keseimbangan antara precision dan recall di kedua kelas dibandingkan K-Neighbors Classifier. Meskipun kedua model cukup baik dalam mengklasifikasikan data, Forest Classifier memiliki performa yang lebih konsisten dan sedikit lebih baik secara keseluruhan. 
+
 
 ## Referensi
 [[1](https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke)] P2PTM Kemenkes RI. -*Apa itu Stroke ?*. Kemenkes. https://p2ptm.kemkes.go.id/infographic-p2ptm/stroke/apa-itu-stroke
